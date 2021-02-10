@@ -1,4 +1,5 @@
-import React, { useContext, createContext, useState } from 'react';
+import React, { useContext, createContext } from 'react';
+import useLocalStorage from '../../../hooks/useLocalStorage';
 
 const Context = createContext(
   // Default context
@@ -10,7 +11,7 @@ const Context = createContext(
 const Provider = (props) => {
   // children are all the child components in this component
   const { children } = props;
-  const [todos, setTodos] = useState([
+  const [todos, setTodos] = useLocalStorage('todos', [
     {
       id: 0,
       text: 'feed the dog',
