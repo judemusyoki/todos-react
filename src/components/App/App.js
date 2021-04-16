@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function App(props) {
+const App = (props) => {
   const classes = useStyles();
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('xs')); // Anything size xs we return matches
@@ -55,6 +55,6 @@ function App(props) {
       {/* <Footer /> */}
     </Grid>
   );
-}
+};
 
 export default withTheme(App);
